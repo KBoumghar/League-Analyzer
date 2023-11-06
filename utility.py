@@ -288,7 +288,6 @@ def create_summoner_to_id_table(
         puuid, account_id = get_id_summoner(summonerId, API_KEY, region)
 
         formatted_data.append((puuid, summonerId, account_id, summonerName, region))
-        cnt += 1
 
     insert_into_table(PATH_DB, table_name, formatted_data)
 
