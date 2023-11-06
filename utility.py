@@ -211,7 +211,7 @@ def insert_into_table(path_to_db: str, table_name: str, data: list) -> None:
         print(f"Exiting")
         exit()
 
-    tmp = "?, " * len(data)
+    tmp = "?, " * len(data[0])
     value_string = "(" + tmp[:-2] + ")"
     cursor = connection.cursor()
     try:
@@ -280,6 +280,7 @@ def create_summoner_to_id_table(
 
     table_name = create_summonerID_table(connection)
     formatted_data = []
+
     for account in accounts_data:
         summonerId = account["summonerId"]
         summonerName = account["summonerName"]
@@ -287,6 +288,7 @@ def create_summoner_to_id_table(
         puuid, account_id = get_id_summoner(summonerId, API_KEY, region)
 
         formatted_data.append((puuid, summonerId, account_id, summonerName, region))
+        cnt += 1
 
     insert_into_table(PATH_DB, table_name, formatted_data)
 
