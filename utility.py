@@ -5,7 +5,7 @@ Date: 5 November 2023
 Description:
 This module, named "utility.py," provides a collection of utility functions and data structures for working with the Riot Games API data and SQLite databases. These functions allow users to manage API keys, create database connections, perform database operations, and generate API URLs based on region and tier.
 
-Please note that this module relies on the following libraries: sqlite3 and requests. Ensure that you have these libraries installed and that you have created a "data.db" file under a "db" folder before using this module.
+Please note that this module assumes the use of a personal API key from Riot Games.
 
 Table of Contents:
 1. Global Variables
@@ -13,20 +13,21 @@ Table of Contents:
 3. Database Operations
 4. URL Generation
 
-Global Variables:
+1. Global Variables:
 - DB_URL (str): The path to the SQLite database file.
 - region_dict (dict): A dictionary that maps region codes to their respective API URLs.
 - division_dict (dict): A dictionary that maps division codes to their corresponding Roman numerals.
 - tier_set (set): A set containing valid League of Legends tiers.
+- REQUESTS_COUNTER (int): A global variable that tracks the number of requests made to Riot's API.
 
-API Key Management:
+2. API Key Management:
 - get_api_key(file_name: str) -> str:
   Retrieves the Riot Games API key from a file and returns it as a string.
 
 - get_path_db() -> str:
   Returns the full path to the SQLite database used for data storage.
 
-Database Operations:
+3. Database Operations:
 - create_connection(path_to_db: str) -> sqlite3.Connection:
   Creates and returns a connection to the SQLite database. It handles database connectivity.
 
@@ -44,7 +45,7 @@ Database Operations:
   - table_name (str): The name of the table to insert data into.
   - data (list): A list of values to be inserted into the table, following its schema.
 
-URL Generation:
+4. URL Generation:
 - region_to_url(region: str) -> str:
   Converts a region code to its corresponding API URL for Riot Games API requests.
 
@@ -78,6 +79,7 @@ Usage:
 
 Note:
 - Ensure that you have a valid Riot Games API key and an existing SQLite database (data.db) under a "db" folder before using these functions.
+- The rate limits used in the code logic assume that you use a personal API key from Riot's.
 
 References:
 - SQLite Tutorial: https://www.sqlitetutorial.net/sqlite-python/creating-tables/
@@ -91,6 +93,8 @@ import requests
 
 
 DB_URL = "db/data.db"
+REQUESTS_COUNTER = 0
+
 region_dict = {
     "NA": "https://na1.api.riotgames.com",
     "EUW": "https://euw1.api.riotgames.com",
