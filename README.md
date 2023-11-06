@@ -25,7 +25,7 @@ The League of Legends Analyzer is a Python-based application that utilizes the R
 
 ## Prerequisites
 
-Before using the League of Legends API Data Collector, ensure you have the following prerequisites in place:
+Before using the League of Legends Analyzer, ensure you have the following prerequisites in place:
 
 - Python 3.x
 - Required Python libraries: `sqlite3` and `requests`
