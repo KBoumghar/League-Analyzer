@@ -1,12 +1,12 @@
-# League of Legends API Data Collector
+# League of Legends API Data Collector and Analyzer
 
 **Early Development Stage**
 
-This project is an early-stage data collector for the League of Legends game, designed to gather summoner information using the Riot Games API and store it in a local SQLite database. This README provides an overview of the project and instructions for use.
+This project is an early-stage data collector for the League of Legends game, designed to gather summoner information using the Riot Games API and store it in a local SQLite database. This README provides an overview of the project so far and instructions for use.
 
 ## Table of Contents
 
-- [League of Legends API Data Collector](#league-of-legends-api-data-collector)
+- [League of Legends API Data Collector and Analyzer](#league-of-legends-api-data-collector-and-analyzer)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Project Status](#project-status)
