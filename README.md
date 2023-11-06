@@ -1,12 +1,12 @@
-# League of Legends API Data Collector and Analyzer
+# League of Legends Analyzer
 
 **Early Development Stage**
 
-This project is an early-stage data collector for the League of Legends game, designed to gather summoner information using the Riot Games API and store it in a local SQLite database. This README provides an overview of the project so far and instructions for use.
+This project is an early-stage data collector for the League of Legends game, designed to gather summoner information using the Riot Games API and store it in a local SQLite database for analytics purpose. This README provides an overview of the project so far and instructions for use.
 
 ## Table of Contents
 
-- [League of Legends API Data Collector and Analyzer](#league-of-legends-api-data-collector-and-analyzer)
+- [League of Legends Analyzer](#league-of-legends-analyzer)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Project Status](#project-status)
@@ -17,7 +17,7 @@ This project is an early-stage data collector for the League of Legends game, de
 
 ## Overview
 
-The League of Legends API Data Collector is a Python-based application that utilizes the Riot Games API to collect summoner data and store it in a local SQLite database. It offers a set of utility functions for managing API keys, creating database connections, performing database operations, and generating API URLs based on different parameters.
+The League of Legends Analyzer is a Python-based application that utilizes the Riot Games API to collect summoner data and store it in a local SQLite database. It offers a set of utility functions for managing API keys, creating database connections, performing database operations, and generating API URLs based on different parameters.
 
 ## Project Status
 
