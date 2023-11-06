@@ -306,14 +306,10 @@ def get_id_summoner(summonerId: str, API_KEY, region="NA"):
 
     # Logic for api rate limits
     if response.status_code == 429:
-        if REQUESTS_COUNTER < 99:
-            print("1 second hit rate limit")
-            time.sleep(1)
-
-        else:
-            print("2 minutes hit rate limit")
-            time.sleep(121)
-            REQUESTS_COUNTER = 0
+        wait_time = int(response.headers["Retry-After"]) + 1
+        print(f"Rate limit hit, need to wait for : {wait_time}")
+        time.sleep(wait_time)
+        print(f"Sleeping finished, restarting requests!")
 
         return get_id_summoner(summonerId, API_KEY, region=region)
 
